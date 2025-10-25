@@ -24,7 +24,20 @@ export function NavLink({ to, children, icon: Icon, isAppsOpen = false, selected
               : "text-secondary-foreground",
           )}
         >
-          <Icon className="size-3 sm:size-4" />
+          {typeof Icon === "string" ? (
+            <img
+              src={Icon}
+              alt={children}
+              className={cn(
+                "size-3 sm:size-4 transition-all",
+                isActive
+                  ? "[filter:brightness(0)_saturate(100%)]"
+                  : "[filter:brightness(0)_saturate(100%)_opacity(0.6)]"
+              )}
+            />
+          ) : (
+            <Icon className="size-3 sm:size-4" />
+          )}
         </div>
       )}
       <span className="hidden sm:inline">{children}</span>

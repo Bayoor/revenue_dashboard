@@ -58,13 +58,13 @@ export function TransactionList() {
   const filteredTransactions = filterTransactions(transactions || []);
 
   return (
-    <div className="mt-8">
-      <div className="flex items-center justify-between mb-6 border-b  border-primary pb-6">
+    <div className="mt-6 sm:mt-8">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 sm:mb-6 border-b border-primary pb-4 sm:pb-6 gap-4 sm:gap-0">
         <div>
-          <h2 className="text-2xl font-bold text-foreground">
+          <h2 className="text-xl sm:text-2xl font-bold text-foreground">
             {filteredTransactions?.length || 0} Transactions
           </h2>
-          <p className="text-sm text-secondary-foreground mt-1 ">
+          <p className="text-xs sm:text-sm text-secondary-foreground mt-0.5 sm:mt-1">
             Your transactions{" "}
             {filters.startDate
               ? "for the selected date range"
@@ -72,7 +72,7 @@ export function TransactionList() {
           </p>
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3 w-full sm:w-auto">
           <FilterModal
             onApplyFilter={setFilters}
             filteredCount={
@@ -83,15 +83,15 @@ export function TransactionList() {
           />
           <Button
             variant="outline"
-            className="gap-2 hover:text-foreground rounded-[100px] w-[139px] h-12 font-semibold"
+            className="gap-1.5 sm:gap-2 hover:text-foreground rounded-[100px] px-4 sm:px-6 h-10 sm:h-12 text-xs sm:text-sm font-semibold whitespace-nowrap"
           >
             Export list
-            <Download className="size-4" />
+            <Download className="size-3 sm:size-4" />
           </Button>
         </div>
       </div>
 
-      <div className="space-y-1">
+      <div className="space-y-0.5 sm:space-y-1">
         {filteredTransactions?.length === 0 ? (
           <NotFound
             title="No transactions found"

@@ -1,13 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, Link } from "react-router-dom";
 import {
-  Home,
-  BarChart3,
-  DollarSign,
-  Users,
-  LayoutGrid,
-  Bell,
-  MessageSquare,
   Menu,
   Settings,
   ShoppingBag,
@@ -16,10 +9,6 @@ import {
   Bug,
   RefreshCw,
   LogOut,
-  BookOpen,
-  FileText,
-  Image,
-  DollarSign as Invoice,
   Calendar,
   ChevronRight,
   ChevronDown,
@@ -39,11 +28,11 @@ export function Header({
 
   // Define all nav items including Apps
   const allNavItems = [
-    { icon: Home, label: "Home", href: "/" },
-    { icon: BarChart3, label: "Analytics", href: "/analytics" },
-    { icon: DollarSign, label: "Revenue", href: "/revenue" },
-    { icon: Users, label: "CRM", href: "/crm" },
-    { icon: LayoutGrid, label: "Apps", href: "#apps", isApps: true },
+    { icon: "/icons/home.svg", label: "Home", href: "/" },
+    { icon: "/icons/analytics.svg", label: "Analytics", href: "/analytics" },
+    { icon: "/icons/revenue.svg", label: "Revenue", href: "/revenue" },
+    { icon: "/icons/crm.svg", label: "CRM", href: "/crm" },
+    { icon: "/icons/apps.svg", label: "Apps", href: "#apps", isApps: true },
   ];
 
   const [navItemsOrder, setNavItemsOrder] = useState(allNavItems);
@@ -160,7 +149,20 @@ export function Header({
                           : "text-secondary-foreground",
                       )}
                     >
-                      <item.icon className="size-3 sm:size-4" />
+                      {typeof item.icon === "string" ? (
+                        <img
+                          src={item.icon}
+                          alt={item.label}
+                          className={cn(
+                            "size-3 sm:size-4 transition-all",
+                            isAppsOpen || selectedApp
+                              ? "[filter-brightness(0)_saturate(100%)]"
+                              : "[filter-brightness(0)_saturate(100%)_opacity(0.6)]"
+                          )}
+                        />
+                      ) : (
+                        <item.icon className="size-3 sm:size-4" />
+                      )}
                     </div>
                     <span className="hidden sm:inline">
                       {selectedApp
@@ -219,7 +221,15 @@ export function Header({
                         onClick={() => handleDropdownItemClick(item)}
                         className="flex items-center gap-3 px-4 py-2.5 text-sm text-popover-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
                       >
-                        <item.icon className="size-4 text-secondary-foreground" />
+                        {typeof item.icon === "string" ? (
+                          <img
+                            src={item.icon}
+                            alt={item.label}
+                            className="size-4 [filter-brightness(0)_saturate(100%)_opacity(0.6)]"
+                          />
+                        ) : (
+                          <item.icon className="size-4 text-secondary-foreground" />
+                        )}
                         {item.label}
                       </Link>
                     ))}
@@ -250,7 +260,20 @@ export function Header({
                           : "text-secondary-foreground",
                       )}
                     >
-                      <item.icon className="size-4" />
+                      {typeof item.icon === "string" ? (
+                        <img
+                          src={item.icon}
+                          alt={item.label}
+                          className={cn(
+                            "size-4 transition-all",
+                            isAppsOpen || selectedApp
+                              ? "[filter-brightness(0)_saturate(100%)]"
+                              : "[filter-brightness(0)_saturate(100%)_opacity(0.6)]"
+                          )}
+                        />
+                      ) : (
+                        <item.icon className="size-4" />
+                      )}
                     </div>
                     <span>
                       {selectedApp
@@ -321,14 +344,22 @@ export function Header({
             className="hidden sm:flex p-2 hover:bg-muted rounded-md transition-colors"
             aria-label="Notifications"
           >
-            <Bell className="size-5 text-secondary-foreground" />
+            <img
+              src="/icons/notifications.svg"
+              alt="Notifications"
+              className="size-5"
+            />
           </button>
 
           <button
             className="hidden sm:flex p-2 hover:bg-muted rounded-md transition-colors"
             aria-label="Messages"
           >
-            <MessageSquare className="size-5 text-secondary-foreground" />
+            <img
+              src="/icons/chat.svg"
+              alt="Messages"
+              className="size-5"
+            />
           </button>
 
           {/* User Initials */}
