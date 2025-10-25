@@ -286,7 +286,7 @@ export function Header({
                       setSelectedApp(app.label);
                       setIsAppsOpen(false);
                     }}
-                    className="flex items-center gap-3 p-3 rounded-full hover:border hover:border-border transition-colors cursor-pointer group"
+                    className="flex items-center gap-3 p-3 rounded-xl hover:shadow-app hover:border-border  transition-colors cursor-pointer group"
                   >
                     <div className="flex items-center justify-center rounded bg-primary p-2 shrink-0">
                       {typeof app.icon === "string" ? (
@@ -299,7 +299,8 @@ export function Header({
                         <app.icon className="size-5 text-primary-foreground" />
                       )}
                     </div>
-                    <div className="flex-1">
+                    <div className="flex-1 hover:-ml-1
+                      ">
                       <p className="font-medium text-sm text-popover-foreground">
                         {app.label}
                       </p>
@@ -352,7 +353,7 @@ export function Header({
                       <div className="w-10 h-10 rounded-full bg-accent text-accent-foreground flex items-center justify-center text-sm font-medium">
                         {getInitials(userName)}
                       </div>
-                      <div className="flex flex-col">
+                      <div className="flex flex-col text-start">
                         <span className="font-semibold text-sm text-popover-foreground">
                           {userName}
                         </span>
