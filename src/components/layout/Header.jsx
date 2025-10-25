@@ -331,7 +331,7 @@ export function Header({
           </button>
 
           {/* User Initials */}
-          <div className="flex items-center gap-1 sm:gap-2">
+          <div className="flex items-center gap-1 sm:gap-2   bg-secondary-foreground/8 border-accent rounded-[100px]">
             <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-full bg-accent text-accent-foreground flex items-center justify-center text-[10px] sm:text-sm font-medium">
               {getInitials(userName)}
             </div>
@@ -346,7 +346,7 @@ export function Header({
 
               {/* Dropdown Menu */}
               {isMenuOpen && (
-                <div className="absolute right-0 top-full mt-2 w-56 sm:w-64 bg-popover rounded-lg shadow-custom border py-2 z-50">
+                <div className="absolute right-0 top-full mt-6 w-56 sm:w-64 bg-popover rounded-lg shadow-custom border py-2 z-50 ">
                   <div className="px-4 py-3 border-b">
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-full bg-accent text-accent-foreground flex items-center justify-center text-sm font-medium">
