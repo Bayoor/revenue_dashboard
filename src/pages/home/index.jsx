@@ -49,7 +49,7 @@ const Home = () => {
 
       <main className="p-6 px-6 md:px-12 lg:px-[140px] pt-24 md:pt-28 lg:pt-32">
         <div className="flex flex-col lg:flex-row justify-between gap-8 lg:gap-0">
-          <div className="w-12 h-48 self-end rounded-[100px] justify-center flex flex-col relative -left-28 -top-14 shadow-app">
+          <div className="max-lg:hidden w-12 h-48 self-end rounded-[100px] justify-center flex flex-col relative -left-28 -top-14 shadow-app">
             <img
               src="./icons/app-bar-list.svg"
               alt=""
