@@ -129,7 +129,7 @@ const FilterModal = ({ onApplyFilter, filteredCount }) => {
         >
           Filter
           {filteredCount !== null && (
-            <span className="ml-1">{filteredCount}</span>
+            <span className="ml-1 bg-foreground text-primary border border-foreground rounded-full min-w-6 h-6 flex items-center justify-center px-1.5 text-xs font-medium">{filteredCount}</span>
           )}
           <ChevronDown className="size-4 text-foreground" />
         </Button>
@@ -293,7 +293,7 @@ const FilterModal = ({ onApplyFilter, filteredCount }) => {
           <Button
             onClick={handleApply}
             disabled={!startDate || !endDate}
-            className="flex-1 rounded-full bg-accent text-accent-foreground hover:bg-accent/10 disabled:opacity-30 disabled:cursor-not-allowed"
+            className="flex-1 rounded-full bg-accent text-accent-foreground hover:bg-accent/10 hover:text-accent disabled:opacity-30 disabled:cursor-not-allowed"
           >
             Apply
           </Button>
