@@ -6,7 +6,7 @@ export function WalletCard({ label, value, tooltip }) {
       <div className="flex items-start justify-between">
         <div className="flex-1 ">
           <p className="text-sm text-secondary-foreground mb-1">{label}</p>
-          <p className="text-xl font-bold text-foreground">{value}</p>
+          <p className="text-[28px] font-bold text-foreground">{value}</p>
         </div>
         <button
           className="p-1 hover:bg-muted rounded transition-colors shrink-0 ml-2"

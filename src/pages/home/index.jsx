@@ -86,7 +86,7 @@ const Home = () => {
                     }) || "0.00"}
                   </p>
                 </div>
-                <Button className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-[100px] px-7 py-3.5 w-full sm:w-auto">
+                <Button className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-[100px] px-7 py-3.5  sm:w-auto h-[52px] w-[167px] max-sm:w-full max-sm:h-10">
                   Withdraw
                 </Button>
               </div>

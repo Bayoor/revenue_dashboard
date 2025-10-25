@@ -23,16 +23,17 @@ const chartConfig = {
 
 export function RevenueChart() {
   return (
-    <ChartContainer config={chartConfig} className='h-[200px] sm:h-[250px] lg:h-[300px] w-full'>
+    <ChartContainer
+      config={chartConfig}
+      className="h-[200px] sm:h-[250px] lg:h-[300px] w-full"
+    >
       <LineChart
         accessibilityLayer
         data={chartData}
         margin={{
           left: 12,
           right: 12,
-
         }}
-
       >
         <CartesianGrid vertical={false} horizontal={false} />
         <XAxis
@@ -41,11 +42,10 @@ export function RevenueChart() {
           axisLine={true}
           tickMargin={2}
           strokeWidth={1}
-          domain={['dataMin', 'dataMax']}
+          domain={["dataMin", "dataMax"]}
           scale="point"
           padding={{ left: 20, right: 20 }}
           ticks={[chartData[0].date, chartData[chartData.length - 1].date]}
-
         />
         <ReferenceLine
           y0="100%"
